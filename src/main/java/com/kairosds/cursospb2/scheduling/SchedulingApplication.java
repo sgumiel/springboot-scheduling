@@ -15,9 +15,8 @@ public class SchedulingApplication {
 		SpringApplication.run(SchedulingApplication.class, args);
 	}
 
-	@Scheduled(initialDelay = 5000, fixedRate= 500)
+	@Scheduled(cron = "* 22 9 * * *")
 	void printTime() throws InterruptedException {
-		Thread.sleep(1000);
 		System.out.println(Instant.now());
 	}
 }
